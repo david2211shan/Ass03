@@ -51,7 +51,6 @@ class ColourTest {
         assertTrue(Colour1.equals(Colour2));
         assertFalse(Colour2.equals(Colour3));
 
-
     }
 
 

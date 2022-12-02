@@ -25,6 +25,9 @@ public class Colour {
         if (RGB < 0 || RGB > 16777215) {
             throw new IllegalArgumentException();
         }
+        this.Red =  ((RGB >> 16) & 255)/255;
+        this.Green = ((RGB >> 8) & 255)/255;
+        this.Blue =  (RGB & 255)/255;
     }
     public float getRed() {
         return Red;
@@ -40,5 +43,18 @@ public class Colour {
 
     public int getRGB() {
         return RGB;
+    }
+    @Override
+    public boolean equals(Object Colour2){
+        if (Colour2 == this) {
+            return true;
+        }
+
+        if (!(Colour2 instanceof Colour)) {
+            return false;
+        }
+
+        Colour RGB = (Colour) Colour2;
+        return (this.getRed() == RGB.getRed()) && (this.getGreen() == RGB.getGreen()) && (this.getBlue() == RGB.getBlue()) ;
     }
 }
