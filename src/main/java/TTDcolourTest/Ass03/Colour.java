@@ -1,6 +1,7 @@
 package TTDcolourTest.Ass03;
 
 public class Colour {
+    private int RGB;
     private float Red;
     private float Green;
     private float Blue;
@@ -19,6 +20,9 @@ public class Colour {
             throw new IllegalArgumentException();
         }
     }
+    public Colour(int RGB) {
+        this.RGB = RGB;
+    }
     public float getRed() {
         return Red;
     }
@@ -29,5 +33,9 @@ public class Colour {
 
     public float getBlue() {
         return Blue;
+    }
+
+    public int getRGB() {
+        return RGB;
     }
 }
