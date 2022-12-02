@@ -9,6 +9,15 @@ public class Colour {
         this.Red = Red;
         this.Green = Green;
         this.Blue = Blue;
+        if (Red < 0.0){
+            throw new IllegalArgumentException();
+        }
+        if (Green < 0.0 ){
+            throw new IllegalArgumentException();
+        }
+        if (Blue < 0.0 ){
+            throw new IllegalArgumentException();
+        }
     }
     public float getRed() {
         return Red;
