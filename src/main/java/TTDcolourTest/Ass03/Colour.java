@@ -2,9 +2,9 @@ package TTDcolourTest.Ass03;
 
 public class Colour {
     private int RGB;
-    private float Red;
-    private float Green;
-    private float Blue;
+    private final float Red;
+    private final float Green;
+    private final float Blue;
 
     public Colour(float Red, float Green, float Blue) {
         this.Red = Red;
@@ -25,9 +25,9 @@ public class Colour {
         if (RGB < 0 || RGB > 16777215) {
             throw new IllegalArgumentException();
         }
-        this.Red =  ((RGB >> 16) & 255)/255;
-        this.Green = ((RGB >> 8) & 255)/255;
-        this.Blue =  (RGB & 255)/255;
+        this.Red =  (float)((RGB >> 16) & 255)/255;
+        this.Green = (float)((RGB >> 8) & 255)/255;
+        this.Blue =  (float)(RGB & 255)/255;
     }
     public float getRed() {
         return Red;
@@ -50,11 +50,10 @@ public class Colour {
             return true;
         }
 
-        if (!(Colour2 instanceof Colour)) {
+        if (!(Colour2 instanceof Colour RGB)) {
             return false;
         }
 
-        Colour RGB = (Colour) Colour2;
         return (this.getRed() == RGB.getRed()) && (this.getGreen() == RGB.getGreen()) && (this.getBlue() == RGB.getBlue()) ;
     }
 }
