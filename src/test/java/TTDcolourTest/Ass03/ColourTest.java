@@ -16,5 +16,12 @@ class ColourTest {
         assertEquals((float) 0.2, colour.getGreen());
         assertEquals((float) 0.3, colour.getBlue());
     }
+    @Test
+    @DisplayName("Does not take negative values")
+    void no_negative(){
+        assertThrows(IllegalArgumentException.class, () -> new Colour((float) -0.1, (float) 0.2 , (float) 0.3));
+        assertThrows(IllegalArgumentException.class, () -> new Colour((float) 0.1, (float) -0.2 , (float) 0.3));
+        assertThrows(IllegalArgumentException.class, () -> new Colour((float) 0.1, (float) 0.2 , (float) -0.3));
+    }
 
 }
