@@ -22,6 +22,9 @@ public class Colour {
     }
     public Colour(int RGB) {
         this.RGB = RGB;
+        if (RGB < 0 || RGB > 16777215) {
+            throw new IllegalArgumentException();
+        }
     }
     public float getRed() {
         return Red;
