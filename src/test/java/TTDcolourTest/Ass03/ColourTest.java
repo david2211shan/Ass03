@@ -42,5 +42,17 @@ class ColourTest {
         assertThrows(IllegalArgumentException.class, () -> new Colour((int) -1));
         assertThrows(IllegalArgumentException.class, () -> new Colour((int) 16777220));
     }
+    @Test
+    @DisplayName("Compare RGB value colours")
+    void CompareRGBValues(){
+        Colour Colour1 = new Colour(1, 1, 1);
+        Colour Colour2 = new Colour(16777215);
+        Colour Colour3 = new Colour(13245);
+        assertTrue(Colour1.equals(Colour2));
+        assertFalse(Colour2.equals(Colour3));
+
+
+    }
+
 
 }
