@@ -9,13 +9,13 @@ public class Colour {
         this.Red = Red;
         this.Green = Green;
         this.Blue = Blue;
-        if (Red < 0.0){
+        if (Red < 0.0 || Red > 1.0){
             throw new IllegalArgumentException();
         }
-        if (Green < 0.0 ){
+        if (Green < 0.0|| Green > 1.0 ){
             throw new IllegalArgumentException();
         }
-        if (Blue < 0.0 ){
+        if (Blue < 0.0 || Blue > 1.0){
             throw new IllegalArgumentException();
         }
     }
