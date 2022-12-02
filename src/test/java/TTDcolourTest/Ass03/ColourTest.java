@@ -23,5 +23,12 @@ class ColourTest {
         assertThrows(IllegalArgumentException.class, () -> new Colour((float) 0.1, (float) -0.2 , (float) 0.3));
         assertThrows(IllegalArgumentException.class, () -> new Colour((float) 0.1, (float) 0.2 , (float) -0.3));
     }
+    @Test
+    @DisplayName("Does not take values greater than one")
+    void no_valueGreaterThanOne(){
+        assertThrows(IllegalArgumentException.class, () -> new Colour((float) 2.1, (float) 0.2 , (float) 0.3));
+        assertThrows(IllegalArgumentException.class, () -> new Colour((float) 0.1, (float) 1.2 , (float) 0.3));
+        assertThrows(IllegalArgumentException.class, () -> new Colour((float) 0.1, (float) 0.2 , (float) 5.3));
+    }
 
 }
