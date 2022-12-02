@@ -36,5 +36,11 @@ class ColourTest {
         Colour colour = new Colour((int) 10000000);
         assertEquals(10000000, colour.getRGB());
     }
+    @Test
+    @DisplayName("Check if RGB value is between 0 and 16777215")
+    void checkRGBValueCorrect(){
+        assertThrows(IllegalArgumentException.class, () -> new Colour((int) -1));
+        assertThrows(IllegalArgumentException.class, () -> new Colour((int) 16777220));
+    }
 
 }
