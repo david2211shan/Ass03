@@ -30,5 +30,11 @@ class ColourTest {
         assertThrows(IllegalArgumentException.class, () -> new Colour((float) 0.1, (float) 1.2 , (float) 0.3));
         assertThrows(IllegalArgumentException.class, () -> new Colour((float) 0.1, (float) 0.2 , (float) 5.3));
     }
+    @Test
+    @DisplayName("Check if colour takes an int rbg value ")
+    void CheckValueIntRGB(){
+        Colour colour = new Colour((int) 10000000);
+        assertEquals(10000000, colour.getRGB());
+    }
 
 }
